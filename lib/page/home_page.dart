@@ -21,94 +21,86 @@ class _HomePageState extends State<HomePage> {
     return Row(
       children: [
         Expanded(
-          child: Padding(
+          child: ListView(
             padding: const EdgeInsets.symmetric(
               horizontal: 30,
+              vertical: 40,
             ),
-            child: ListView(
-              children: [
-                40.verticalSpace,
-                buildTitle(),
-                30.verticalSpace,
-                Row(
+            children: [
+              buildTitle(),
+              30.verticalSpace,
+              Row(
+                children: [
+                  buildDataCard(
+                    data: "271,555K",
+                    title: "千卡",
+                    color: const Color(0xFFD67B7B),
+                    icon: HugeIcons.strokeRoundedFire,
+                  ),
+                  20.horizontalSpace,
+                  buildDataCard(
+                    data: "1529.56",
+                    title: "公里",
+                    color: const Color(0xFFA9D196),
+                    icon: HugeIcons.strokeRoundedWorkoutRun,
+                  ),
+                  20.horizontalSpace,
+                  buildDataCard(
+                    data: "28,480",
+                    title: "分钟",
+                    color: const Color(0xFF48ADE5),
+                    icon: HugeIcons.strokeRoundedDumbbell01,
+                  ),
+                  20.horizontalSpace,
+                  buildDataCard(
+                    data: "122,34",
+                    title: "分钟",
+                    color: const Color(0xFFD1AB96),
+                    icon: HugeIcons.strokeRoundedHandPrayer,
+                  ),
+                ],
+              ),
+              20.verticalSpace,
+              ConstrainedBox(
+                constraints: const BoxConstraints(maxHeight: 300),
+                child: Row(
                   children: [
-                    buildDataCard(
-                      data: "271,555K",
-                      title: "千卡",
-                      color: const Color(0xFFD67B7B),
-                      icon: HugeIcons.strokeRoundedFire,
+                    Expanded(child: buildAllRecord()),
+                    20.horizontalSpace,
+                    Expanded(child: buildMap()),
+                  ],
+                ),
+              ),
+              20.verticalSpace,
+              SizedBox(
+                height: 200,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: buildStatus(),
                     ),
                     20.horizontalSpace,
-                    buildDataCard(
-                      data: "1529.56",
-                      title: "公里",
-                      color: const Color(0xFFA9D196),
-                      icon: HugeIcons.strokeRoundedWorkoutRun,
-                    ),
-                    20.horizontalSpace,
-                    buildDataCard(
-                      data: "28,480",
-                      title: "分钟",
-                      color: const Color(0xFF48ADE5),
-                      icon: HugeIcons.strokeRoundedDumbbell01,
-                    ),
-                    20.horizontalSpace,
-                    buildDataCard(
-                      data: "122,34",
-                      title: "分钟",
-                      color: const Color(0xFFD1AB96),
-                      icon: HugeIcons.strokeRoundedHandPrayer,
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Expanded(child: buildMsgs()),
+                          20.horizontalSpace,
+                          Expanded(
+                            child: Image.asset(
+                              "images/run.png",
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
-                20.verticalSpace,
-                SizedBox(
-                  height: 300,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Expanded(child: buildAllRecord()),
-                      20.horizontalSpace,
-                      Expanded(child: buildMap()),
-                    ],
-                  ),
-                ),
-                20.verticalSpace,
-                SizedBox(
-                  height: 200,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: buildStatus(),
-                      ),
-                      20.horizontalSpace,
-                      Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(child: buildMsgs()),
-                            20.horizontalSpace,
-                            Image.asset(
-                              "images/run.png",
-                              width: 200,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Container(
           width: 350,
-          padding: const EdgeInsets.only(
-            left: 40,
-            right: 50,
-            top: 40,
-            bottom: 30,
-          ),
           color: const Color(0xFFE8F3E3),
           child: buildUserInfo(),
         )
@@ -230,122 +222,128 @@ class _HomePageState extends State<HomePage> {
 
   //运动总记录
   Widget buildAllRecord() {
-    return buildCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            "运动总记录",
-            style: TextStyle(
-              fontSize: 22,
+    return AspectRatio(
+      aspectRatio: 1,
+      child: buildCard(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "运动总记录",
+              style: TextStyle(
+                fontSize: 22,
+              ),
             ),
-          ),
-          10.verticalSpace,
-          const Text(
-            "10月23日 至 10月29日",
-            style: TextStyle(
-              color: Color(0xFF939EA2),
-              fontSize: 16,
+            10.verticalSpace,
+            const Text(
+              "10月23日 至 10月29日",
+              style: TextStyle(
+                color: Color(0xFF939EA2),
+                fontSize: 16,
+              ),
             ),
-          ),
-          30.verticalSpace,
-          Expanded(
-            child: SfCartesianChart(
-              margin: EdgeInsets.zero,
-              plotAreaBorderWidth: 0,
-              primaryXAxis: const CategoryAxis(
-                majorGridLines: MajorGridLines(width: 0),
-                majorTickLines: MajorTickLines(width: 0),
-                axisLine: AxisLine(width: 0),
-                labelStyle: TextStyle(
-                  color: Color(0xFF939EA2),
+            30.verticalSpace,
+            Expanded(
+              child: SfCartesianChart(
+                margin: EdgeInsets.zero,
+                plotAreaBorderWidth: 0,
+                primaryXAxis: const CategoryAxis(
+                  majorGridLines: MajorGridLines(width: 0),
+                  majorTickLines: MajorTickLines(width: 0),
+                  axisLine: AxisLine(width: 0),
+                  labelStyle: TextStyle(
+                    color: Color(0xFF939EA2),
+                  ),
                 ),
+                primaryYAxis: const NumericAxis(
+                  axisLine: AxisLine(width: 0),
+                  //labelFormat: '{value}%',
+                  majorTickLines: MajorTickLines(size: 0),
+                ),
+                series: <ColumnSeries<ChartSampleData, String>>[
+                  ColumnSeries<ChartSampleData, String>(
+                    dataSource: <ChartSampleData>[
+                      ChartSampleData(x: '23', y: 60),
+                      ChartSampleData(x: '24', y: 80),
+                      ChartSampleData(x: '25', y: 120),
+                      ChartSampleData(x: '26', y: 90),
+                      ChartSampleData(x: '27', y: 30),
+                      ChartSampleData(x: '28', y: 60),
+                      ChartSampleData(x: '29', y: 90),
+                    ],
+                    borderRadius: BorderRadius.vertical(top: 8.radius),
+                    xValueMapper: (ChartSampleData sales, _) => sales.x,
+                    yValueMapper: (ChartSampleData sales, _) => sales.y,
+                    pointColorMapper: (datum, index) {
+                      if (datum.y > 90) {
+                        return const Color(0xFFA9D196);
+                      }
+                      return const Color(0xFFF6EAE6);
+                    },
+                    // dataLabelSettings: const DataLabelSettings(
+                    //   isVisible: false,
+                    //   textStyle: TextStyle(fontSize: 10),
+                    // ),
+                  )
+                ],
               ),
-              primaryYAxis: const NumericAxis(
-                axisLine: AxisLine(width: 0),
-                //labelFormat: '{value}%',
-                majorTickLines: MajorTickLines(size: 0),
-              ),
-              series: <ColumnSeries<ChartSampleData, String>>[
-                ColumnSeries<ChartSampleData, String>(
-                  dataSource: <ChartSampleData>[
-                    ChartSampleData(x: '23', y: 60),
-                    ChartSampleData(x: '24', y: 80),
-                    ChartSampleData(x: '25', y: 120),
-                    ChartSampleData(x: '26', y: 90),
-                    ChartSampleData(x: '27', y: 30),
-                    ChartSampleData(x: '28', y: 60),
-                    ChartSampleData(x: '29', y: 90),
-                  ],
-                  borderRadius: BorderRadius.vertical(top: 8.radius),
-                  xValueMapper: (ChartSampleData sales, _) => sales.x,
-                  yValueMapper: (ChartSampleData sales, _) => sales.y,
-                  pointColorMapper: (datum, index) {
-                    if (datum.y > 90) {
-                      return const Color(0xFFA9D196);
-                    }
-                    return const Color(0xFFF6EAE6);
-                  },
-                  // dataLabelSettings: const DataLabelSettings(
-                  //   isVisible: false,
-                  //   textStyle: TextStyle(fontSize: 10),
-                  // ),
-                )
-              ],
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
 
   // 地图
   Widget buildMap() {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        image: const DecorationImage(
-          image: AssetImage("images/map.png"),
-          fit: BoxFit.cover,
+    return AspectRatio(
+      aspectRatio: 1,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          image: const DecorationImage(
+            image: AssetImage("images/map.png"),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 20),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Container(
-                width: 300,
-                height: 70,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.white54,
-                      Colors.white.withOpacity(.8),
-                      Colors.white54,
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                child: Container(
+                  width: 300,
+                  height: 70,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.white54,
+                        Colors.white.withOpacity(.8),
+                        Colors.white54,
+                      ],
+                    ),
+                  ),
+                  alignment: Alignment.center,
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "查看我的跑步轨迹",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color(0xFF666666),
+                        ),
+                      ),
+                      HugeIcon(
+                        icon: HugeIcons.strokeRoundedArrowRight01,
+                        color: Color(0xFF666666),
+                        size: 20,
+                      )
                     ],
                   ),
-                ),
-                alignment: Alignment.center,
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "查看我的跑步轨迹",
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFF666666),
-                      ),
-                    ),
-                    HugeIcon(
-                      icon: HugeIcons.strokeRoundedArrowRight01,
-                      color: Color(0xFF666666),
-                      size: 20,
-                    )
-                  ],
                 ),
               ),
             ),
@@ -373,36 +371,38 @@ class _HomePageState extends State<HomePage> {
                 10.verticalSpace,
                 const Text(
                   "累计减重15KG 👏👏👏",
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: Color(0xFF939EA2),
                     fontSize: 16,
                   ),
                 ),
                 const Spacer(),
-                Row(
-                  children: [
-                    const Text(
-                      "52KG",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
+                Text.rich(
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "52KG",
                       ),
-                    ),
-                    20.horizontalSpace,
-                    HugeIcon(
-                      icon: HugeIcons.strokeRoundedArrowRight02,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    20.horizontalSpace,
-                    const Text(
-                      "44.5KG",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
+                      WidgetSpan(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: HugeIcon(
+                            icon: HugeIcons.strokeRoundedArrowRight02,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                      TextSpan(
+                        text: "44.5KG",
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
@@ -496,27 +496,30 @@ class _HomePageState extends State<HomePage> {
           foregroundImage: AssetImage(avatar),
         ),
         10.horizontalSpace,
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              name,
-              style: const TextStyle(
-                fontSize: 14,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                name,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontSize: 14,
+                ),
               ),
-            ),
-            8.verticalSpace,
-            Text(
-              msg,
-              style: const TextStyle(
-                color: Color(0xFF939EA2),
-                fontSize: 12,
+              8.verticalSpace,
+              Text(
+                msg,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  color: Color(0xFF939EA2),
+                  fontSize: 12,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-        const Spacer(),
         Text(
           time,
           style: const TextStyle(
@@ -530,8 +533,13 @@ class _HomePageState extends State<HomePage> {
 
   //用户信息
   buildUserInfo() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+    return ListView(
+      padding: const EdgeInsets.only(
+        left: 40,
+        right: 50,
+        top: 40,
+        bottom: 30,
+      ),
       children: [
         const Text(
           "个人资料",

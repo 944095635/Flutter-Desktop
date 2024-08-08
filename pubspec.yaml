@@ -38,9 +38,9 @@ dependencies:
   # cupertino_icons: ^1.0.6
   hugeicons: ^0.0.7  #图标
   window_manager: ^0.3.9
-  syncfusion_flutter_charts: ^26.2.7
-  syncfusion_localizations: ^26.1.35
-  syncfusion_flutter_datepicker: ^26.2.7
+  syncfusion_flutter_charts: ^26.2.8
+  syncfusion_localizations: ^26.2.8
+  syncfusion_flutter_datepicker: ^26.2.8
   flutter_styled:    #布局样式
     git: 
        url: https://github.com/DMSkin/flutter_styled.git
@@ -54,7 +54,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

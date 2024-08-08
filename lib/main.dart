@@ -11,9 +11,9 @@ void main() async {
 
   WindowOptions windowOptions = const WindowOptions(
     //1245 比 700
-    size: Size(1600, 900),
+    size: Size(1500, 880),
     center: true,
-    minimumSize: Size(1200, 600),
+    minimumSize: Size(1200, 640),
     backgroundColor: Colors.transparent,
     titleBarStyle: TitleBarStyle.hidden,
   );
