@@ -47,10 +47,8 @@ class _LeftMenuBarState extends State<LeftMenuBar> {
               }
             },
           ),
-          SizedBox(
-            height: widget.gap,
-          )
-        }
+          SizedBox(height: widget.gap),
+        },
       ],
     );
   }
@@ -59,10 +57,7 @@ class _LeftMenuBarState extends State<LeftMenuBar> {
 class LeftMenu {
   late Widget child;
   late Widget selectedChild;
-  LeftMenu({
-    required this.child,
-    required this.selectedChild,
-  });
+  LeftMenu({required this.child, required this.selectedChild});
 }
 
 class _LeftMenu extends StatelessWidget {
@@ -94,7 +89,7 @@ class _LeftMenu extends StatelessWidget {
         boxShadow: selected
             ? [
                 BoxShadow(
-                  color: const Color(0xFFA9D196).withOpacity(.8),
+                  color: const Color(0xFFA9D196).withAlpha(204),
                   blurRadius: 20,
                   offset: const Offset(0, 4),
                 ),
@@ -102,9 +97,7 @@ class _LeftMenu extends StatelessWidget {
             : [],
       ),
       child: Material(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         type: selected ? MaterialType.button : MaterialType.transparency,
         color: selected ? indicatorColor : null,
         child: InkWell(

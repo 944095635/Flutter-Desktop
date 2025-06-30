@@ -33,9 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Desktop Demo',
       locale: const Locale("zh", "CN"),
-      supportedLocales: const <Locale>[
-        Locale("zh", "CN"),
-      ],
+      supportedLocales: const <Locale>[Locale("zh", "CN")],
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         SfGlobalLocalizations.delegate,
@@ -59,35 +57,23 @@ class MyApp extends StatelessWidget {
         inputDecorationTheme: InputDecorationTheme(
           enabledBorder: OutlineInputBorder(
             borderRadius: 100.borderRadius,
-            borderSide: const BorderSide(
-              color: Color(0xFFD8E4E9),
-            ),
+            borderSide: const BorderSide(color: Color(0xFFD8E4E9)),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: 100.borderRadius,
-            borderSide: const BorderSide(
-              color: Color(0xFFD8E4E9),
-            ),
+            borderSide: const BorderSide(color: Color(0xFFD8E4E9)),
           ),
-          hintStyle: const TextStyle(
-            color: Color(0xFF939EA2),
-          ),
+          hintStyle: const TextStyle(color: Color(0xFF939EA2)),
         ),
         outlinedButtonTheme: const OutlinedButtonThemeData(
           style: ButtonStyle(
             padding: WidgetStatePropertyAll(EdgeInsets.zero),
-            shape: WidgetStatePropertyAll(
-              CircleBorder(),
-            ),
-            side: WidgetStatePropertyAll(
-              BorderSide(
-                color: Color(0xFFD8E4E9),
-              ),
-            ),
+            shape: WidgetStatePropertyAll(CircleBorder()),
+            side: WidgetStatePropertyAll(BorderSide(color: Color(0xFFD8E4E9))),
           ),
         ),
         dividerTheme: DividerThemeData(
-          color: const Color(0xFFC8D8C7).withOpacity(.3),
+          color: const Color(0xFFC8D8C7).withAlpha(77),
         ),
       ),
       debugShowCheckedModeBanner: false,

@@ -22,10 +22,7 @@ class _HomePageState extends State<HomePage> {
       children: [
         Expanded(
           child: ListView(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 30,
-              vertical: 40,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
             children: [
               buildTitle(),
               30.verticalSpace,
@@ -76,20 +73,14 @@ class _HomePageState extends State<HomePage> {
                 height: 200,
                 child: Row(
                   children: [
-                    Expanded(
-                      child: buildStatus(),
-                    ),
+                    Expanded(child: buildStatus()),
                     20.horizontalSpace,
                     Expanded(
                       child: Row(
                         children: [
                           Expanded(child: buildMsgs()),
                           20.horizontalSpace,
-                          Expanded(
-                            child: Image.asset(
-                              "images/run.png",
-                            ),
-                          ),
+                          Expanded(child: Image.asset("images/run.png")),
                         ],
                       ),
                     ),
@@ -103,7 +94,7 @@ class _HomePageState extends State<HomePage> {
           width: 350,
           color: const Color(0xFFE8F3E3),
           child: buildUserInfo(),
-        )
+        ),
       ],
     );
   }
@@ -115,18 +106,8 @@ class _HomePageState extends State<HomePage> {
         const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "您已运动 10086 天！👏",
-              style: TextStyle(
-                fontSize: 24,
-              ),
-            ),
-            Text(
-              "让我们开始今天的运动吧",
-              style: TextStyle(
-                color: Color(0xFF939EA2),
-              ),
-            ),
+            Text("您已运动 10086 天！👏", style: TextStyle(fontSize: 24)),
+            Text("让我们开始今天的运动吧", style: TextStyle(color: Color(0xFF939EA2))),
           ],
         ),
         const Spacer(),
@@ -135,9 +116,7 @@ class _HomePageState extends State<HomePage> {
           child: TextField(
             decoration: InputDecoration(
               hintText: "请输入内容",
-              prefixIconConstraints: BoxConstraints(
-                minWidth: 50,
-              ),
+              prefixIconConstraints: BoxConstraints(minWidth: 50),
               prefixIcon: HugeIcon(
                 icon: HugeIcons.strokeRoundedSearch01,
                 color: Color(0xFF939EA2),
@@ -168,9 +147,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: const Color(0xFFD8E4E9),
-        ),
+        border: Border.all(color: const Color(0xFFD8E4E9)),
       ),
       padding: const EdgeInsets.all(16),
       child: child,
@@ -191,28 +168,18 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CircleAvatar(
-              backgroundColor: color.withOpacity(.2),
-              child: HugeIcon(
-                icon: icon,
-                color: color,
-                size: 20,
-              ),
+              backgroundColor: color.withAlpha(51),
+              child: HugeIcon(icon: icon, color: color, size: 20),
             ),
             12.verticalSpace,
             Text(
               data,
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-              ),
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
             ),
             12.verticalSpace,
             Text(
               title,
-              style: const TextStyle(
-                color: Color(0xFF939EA2),
-                fontSize: 16,
-              ),
+              style: const TextStyle(color: Color(0xFF939EA2), fontSize: 16),
             ),
           ],
         ),
@@ -228,19 +195,11 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "运动总记录",
-              style: TextStyle(
-                fontSize: 22,
-              ),
-            ),
+            const Text("运动总记录", style: TextStyle(fontSize: 22)),
             10.verticalSpace,
             const Text(
               "10月23日 至 10月29日",
-              style: TextStyle(
-                color: Color(0xFF939EA2),
-                fontSize: 16,
-              ),
+              style: TextStyle(color: Color(0xFF939EA2), fontSize: 16),
             ),
             30.verticalSpace,
             Expanded(
@@ -251,9 +210,7 @@ class _HomePageState extends State<HomePage> {
                   majorGridLines: MajorGridLines(width: 0),
                   majorTickLines: MajorTickLines(width: 0),
                   axisLine: AxisLine(width: 0),
-                  labelStyle: TextStyle(
-                    color: Color(0xFF939EA2),
-                  ),
+                  labelStyle: TextStyle(color: Color(0xFF939EA2)),
                 ),
                 primaryYAxis: const NumericAxis(
                   axisLine: AxisLine(width: 0),
@@ -284,10 +241,10 @@ class _HomePageState extends State<HomePage> {
                     //   isVisible: false,
                     //   textStyle: TextStyle(fontSize: 10),
                     // ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -321,7 +278,7 @@ class _HomePageState extends State<HomePage> {
                     gradient: LinearGradient(
                       colors: [
                         Colors.white54,
-                        Colors.white.withOpacity(.8),
+                        Colors.white.withAlpha(204),
                         Colors.white54,
                       ],
                     ),
@@ -341,7 +298,7 @@ class _HomePageState extends State<HomePage> {
                         icon: HugeIcons.strokeRoundedArrowRight01,
                         color: Color(0xFF666666),
                         size: 20,
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -362,32 +319,22 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text(
-                  "当前状态",
-                  style: TextStyle(
-                    fontSize: 22,
-                  ),
-                ),
+                const Text("当前状态", style: TextStyle(fontSize: 22)),
                 10.verticalSpace,
                 const Text(
                   "累计减重15KG 👏👏👏",
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: Color(0xFF939EA2),
-                    fontSize: 16,
-                  ),
+                  style: TextStyle(color: Color(0xFF939EA2), fontSize: 16),
                 ),
                 const Spacer(),
                 Text.rich(
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
                   ),
                   TextSpan(
                     children: [
-                      TextSpan(
-                        text: "52KG",
-                      ),
+                      const TextSpan(text: "52KG"),
                       WidgetSpan(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -397,12 +344,10 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      TextSpan(
-                        text: "44.5KG",
-                      )
+                      const TextSpan(text: "44.5KG"),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -414,10 +359,7 @@ class _HomePageState extends State<HomePage> {
                 RadialBarSeries<ChartSampleData, String>(
                   maximumValue: 100,
                   dataSource: <ChartSampleData>[
-                    ChartSampleData(
-                      x: '减重',
-                      y: 15,
-                    ),
+                    ChartSampleData(x: '减重', y: 15),
                   ],
                   gap: "70%",
                   radius: "100%",
@@ -429,10 +371,10 @@ class _HomePageState extends State<HomePage> {
                   pointRadiusMapper: (ChartSampleData data, _) =>
                       data.y.toString(),
                   dataLabelMapper: (ChartSampleData data, _) => data.x,
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
@@ -446,17 +388,12 @@ class _HomePageState extends State<HomePage> {
         children: [
           const Row(
             children: [
-              Text(
-                "消息",
-                style: TextStyle(
-                  fontSize: 22,
-                ),
-              ),
+              Text("消息", style: TextStyle(fontSize: 22)),
               Spacer(),
               HugeIcon(
                 icon: HugeIcons.strokeRoundedArrowRight01,
                 color: Colors.grey,
-              )
+              ),
             ],
           ),
           20.verticalSpace,
@@ -476,7 +413,7 @@ class _HomePageState extends State<HomePage> {
               msg: "Flutter 如何?",
               time: "18:00",
             ),
-          )
+          ),
         ],
       ),
     );
@@ -491,10 +428,7 @@ class _HomePageState extends State<HomePage> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        CircleAvatar(
-          radius: 24,
-          foregroundImage: AssetImage(avatar),
-        ),
+        CircleAvatar(radius: 24, foregroundImage: AssetImage(avatar)),
         10.horizontalSpace,
         Expanded(
           child: Column(
@@ -504,28 +438,20 @@ class _HomePageState extends State<HomePage> {
               Text(
                 name,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 14,
-                ),
+                style: const TextStyle(fontSize: 14),
               ),
               8.verticalSpace,
               Text(
                 msg,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  color: Color(0xFF939EA2),
-                  fontSize: 12,
-                ),
+                style: const TextStyle(color: Color(0xFF939EA2), fontSize: 12),
               ),
             ],
           ),
         ),
         Text(
           time,
-          style: const TextStyle(
-            color: Color(0xFF939EA2),
-            fontSize: 12,
-          ),
+          style: const TextStyle(color: Color(0xFF939EA2), fontSize: 12),
         ),
       ],
     );
@@ -534,19 +460,11 @@ class _HomePageState extends State<HomePage> {
   //用户信息
   buildUserInfo() {
     return ListView(
-      padding: const EdgeInsets.only(
-        left: 40,
-        right: 50,
-        top: 40,
-        bottom: 30,
-      ),
+      padding: const EdgeInsets.only(left: 40, right: 50, top: 40, bottom: 30),
       children: [
         const Text(
           "个人资料",
-          style: TextStyle(
-            color: Color(0xFF333333),
-            fontSize: 22,
-          ),
+          style: TextStyle(color: Color(0xFF333333), fontSize: 22),
         ),
         30.verticalSpace,
         Center(
@@ -561,12 +479,7 @@ class _HomePageState extends State<HomePage> {
         ),
         10.verticalSpace,
         const Center(
-          child: Text(
-            "Dream.Machine",
-            style: TextStyle(
-              fontSize: 22,
-            ),
-          ),
+          child: Text("Dream.Machine", style: TextStyle(fontSize: 22)),
         ),
         10.verticalSpace,
         Row(
@@ -580,21 +493,12 @@ class _HomePageState extends State<HomePage> {
             10.horizontalSpace,
             const Text(
               "Flutter 程序员",
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF939EA2),
-              ),
+              style: TextStyle(fontSize: 14, color: Color(0xFF939EA2)),
             ),
-            const SizedBox(
-              height: 14,
-              child: VerticalDivider(),
-            ),
+            const SizedBox(height: 14, child: VerticalDivider()),
             const Text(
               "四川 成都",
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF939EA2),
-              ),
+              style: TextStyle(fontSize: 14, color: Color(0xFF939EA2)),
             ),
           ],
         ),
@@ -602,17 +506,10 @@ class _HomePageState extends State<HomePage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              "images/qq1.png",
-              width: 20,
-              fit: BoxFit.cover,
-            ),
+            Image.asset("images/qq1.png", width: 20, fit: BoxFit.cover),
             const Text(
               "944095635",
-              style: TextStyle(
-                fontSize: 16,
-                color: Color(0xFF939EA2),
-              ),
+              style: TextStyle(fontSize: 16, color: Color(0xFF939EA2)),
             ),
           ],
         ),
@@ -630,7 +527,7 @@ class _HomePageState extends State<HomePage> {
           headerStyle: const DateRangePickerHeaderStyle(
             backgroundColor: Colors.transparent,
           ),
-          rangeSelectionColor: const Color(0xFFA9D196).withOpacity(.3),
+          rangeSelectionColor: const Color(0xFFA9D196).withAlpha(77),
           navigationDirection: DateRangePickerNavigationDirection.vertical,
           // selectionColor: Colors.redAccent,
           // rangeSelectionColor: Colors.redAccent,
@@ -642,10 +539,7 @@ class _HomePageState extends State<HomePage> {
         20.verticalSpace,
         const Text(
           "夜跑",
-          style: TextStyle(
-            fontSize: 18,
-            color: Color(0xFF666666),
-          ),
+          style: TextStyle(fontSize: 18, color: Color(0xFF666666)),
         ),
         20.verticalSpace,
         Row(
@@ -658,16 +552,10 @@ class _HomePageState extends State<HomePage> {
             6.horizontalSpace,
             const Text(
               "22号 19:25",
-              style: TextStyle(
-                fontSize: 16,
-                color: Color(0xFF939EA2),
-              ),
+              style: TextStyle(fontSize: 16, color: Color(0xFF939EA2)),
             ),
             const Spacer(),
-            FilledButton(
-              onPressed: () {},
-              child: const Text("邀请"),
-            )
+            FilledButton(onPressed: () {}, child: const Text("邀请")),
           ],
         ),
         10.verticalSpace,
@@ -681,10 +569,7 @@ class _HomePageState extends State<HomePage> {
             6.horizontalSpace,
             const Text(
               "26号 18:50",
-              style: TextStyle(
-                fontSize: 16,
-                color: Color(0xFF939EA2),
-              ),
+              style: TextStyle(fontSize: 16, color: Color(0xFF939EA2)),
             ),
           ],
         ),
@@ -699,19 +584,14 @@ class _HomePageState extends State<HomePage> {
             6.horizontalSpace,
             const Text(
               "27号 18:33",
-              style: TextStyle(
-                fontSize: 16,
-                color: Color(0xFF939EA2),
-              ),
+              style: TextStyle(fontSize: 16, color: Color(0xFF939EA2)),
             ),
             const Spacer(),
             FilledButton(
               style: const ButtonStyle(
                 minimumSize: WidgetStatePropertyAll(Size(30, 30)),
                 padding: WidgetStatePropertyAll(EdgeInsets.zero),
-                shape: WidgetStatePropertyAll(
-                  CircleBorder(),
-                ),
+                shape: WidgetStatePropertyAll(CircleBorder()),
               ),
               onPressed: () {},
               child: const HugeIcon(
@@ -725,12 +605,8 @@ class _HomePageState extends State<HomePage> {
               style: const ButtonStyle(
                 minimumSize: WidgetStatePropertyAll(Size(30, 30)),
                 padding: WidgetStatePropertyAll(EdgeInsets.zero),
-                shape: WidgetStatePropertyAll(
-                  CircleBorder(),
-                ),
-                backgroundColor: WidgetStatePropertyAll(
-                  Color(0xFFD67B7B),
-                ),
+                shape: WidgetStatePropertyAll(CircleBorder()),
+                backgroundColor: WidgetStatePropertyAll(Color(0xFFD67B7B)),
               ),
               onPressed: () {},
               child: const HugeIcon(
@@ -738,9 +614,9 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white,
                 size: 16,
               ),
-            )
+            ),
           ],
-        )
+        ),
       ],
     );
   }
