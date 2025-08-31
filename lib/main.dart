@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Desktop Demo',
+      title: 'D-App',
       locale: const Locale("zh", "CN"),
       supportedLocales: const <Locale>[Locale("zh", "CN")],
       localizationsDelegates: const [
